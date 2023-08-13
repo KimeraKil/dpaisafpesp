@@ -1,0 +1,360 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to right, #2c5364, #0f2027);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tittulo{
+    position: absolute;
+    top: 10px;
+    display: flex;
+    width: 100%;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+.tittulo img{
+    margin: 0 50px;
+    padding: 0;
+    width: 80px;
+}
+
+.tittulo h1{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 4rem;
+}
+
+.foto{
+    overflow: hidden;
+}
+
+.fotoG{
+    /*background: linear-gradient(to right, #103747, #020f14);*/
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transform-style: preserve-3d;    
+    overflow:hidden ;
+}
+
+@keyframes rotateFG {
+    0% {
+        scale: 0;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    50% {
+        scale: 1;
+        transform: perspective(1000px) rotateY(360deg);
+    } 100% {
+        transform: perspective(1000px) rotateY(360deg);
+        background: linear-gradient(to right, #103747, #020f14);
+    }
+}
+
+.fotoG img{
+    border-radius: 25px;
+    height: 95%;
+    margin: 0 auto;
+}
+
+.loadR{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(232, 248, 232);
+    border: 4px solid blue;
+    border-radius: 20px;
+    align-items: center;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+#fr{
+    margin: 0 0 0 15px;
+}
+
+@keyframes escrever2{
+    0%{
+        width: 0px;
+    } 50% {
+        width: 12px;
+    } 100% {
+        width: 29px;
+    }
+}
+
+#frp{
+    font-size: 2rem;
+    width: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: escrever2 1s steps(60, end) infinite;
+}
+
+.someOFF{
+    display: none;
+}
+
+.fulltela{
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.theSlides{
+    position: absolute;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.foto{
+    background: linear-gradient(to right, #103747, #020f14);
+    position: absolute;
+    /*border-right: 10px solid rgb(4, 4, 95);*/
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider{
+    position: relative;
+    width: 170px;
+    height: 250px;
+    transform-style: preserve-3d;
+    margin: 40px 0;
+    animation: rotate 50s linear  infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+.slider span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i)*21.2deg)) translateZ(500px);
+}
+
+.slider span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: 2s;
+}
+
+.texto{
+    position: absolute;
+    right: 0;
+    width: 40%;
+    height: 100vh;
+    z-index: 99;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    overflow: hidden;
+}
+
+.texto #textoP{
+    text-align: right;
+    font-size: 2.5rem;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.texto #deFilho, .texto #nomePai{
+    margin: 20px 0;
+    font-size: 2.3rem;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;    
+}
+
+@keyframes reduzirF {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes aumentarF {
+    0% {
+        width: 60%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.AnimateReduzirDiv{
+    /*Trazer Imagem*/
+    animation: reduzirF 1s linear both;
+}
+
+.AnimateAumentarDiv{
+    /*Trazer Imagem*/
+    animation: aumentarF 1s linear both;
+}
+
+.AnimateFotoSim{
+    /*Trazer Imagem*/
+    animation: rotateFG 2s linear both;
+}
+
+.AnimateRodar{
+    /*Girar Fotos Normal*/
+    animation: rotate 45s linear infinite;
+}
+
+.AnimateRodar2{
+    /*Girar Fotos Rápido*/
+    animation: rotate 1s linear infinite;
+}
+
+.AnimateAbrir {
+    /*Abrir Texto Vertical*/
+    animation: abrir 5s linear both 6s;
+}
+
+.AnimateEscrever{
+    /*Escrever Texto Horizontal*/
+    animation: escrever 4s steps(60, end) both 2s;
+} 
+
+@keyframes abrir {
+    0% {
+        padding: 0;
+        height: 0;
+    }
+    100% {
+        height: 600px;
+        padding: 100px 0 0 0;
+    }
+}
+
+@keyframes escrever{
+    0%{
+        width: 0%;
+    } 50% {
+        width: 50%;
+    } 100% {
+        width: 100%;
+    }
+}
+
+.formKim{
+    width: 360px;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.tituloForm img{
+    width: 100px;
+}
+
+.created{
+    text-align: center;
+    margin: 20px 0;
+    
+}
+
+#sltFoto{
+    background-color: rgb(3, 75, 3);
+    width: 100px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 12px;
+    margin: 3px 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#arquivo{
+    display: none;
+}
+
+#numMat, #nPai, #txHom, #nFilho{
+    width: 300px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 12px;
+    margin: 3px 0;
+}
+
+#txHom{
+    height: 80px;
+}
+
+#btnSend{
+    display: none;
+    width: 100px;
+    padding: 10px;
+    background-color: rgb(5, 170, 5);
+    border: 2px solid white;
+    border-radius: 12px;
+    margin: 3px 0;
+    color: white;
+    cursor: pointer;
+}
+
